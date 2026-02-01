@@ -1,1 +1,157 @@
+:root {
+    --bg-deep-blue: #0a192f;        /* Main background */
+    --card-blue: #112240;           /* Card/Section background */
+    --metallic-gray: #ccd6f6;       /* Main text (Sparkling Gray) */
+    --slate-tech: #8892b0;          /* Secondary text & borders */
+    --neon-cyan: #64ffda;           /* Accent color (Robotic glow) */
+    --silver-white: #e6f1ff;        /* Headings */
+}
 
+
+body {
+    background-color: var(--bg-deep-blue);
+    color: var(--metallic-gray);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+
+header {
+    background-color: var(--card-blue);
+    padding: 30px 40px; 
+    border-bottom: 1px solid var(--slate-tech);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type="text"] {
+    background: var(--bg-deep-blue);
+    border: 1px solid var(--slate-tech);
+    color: var(--neon-cyan);
+    padding: 8px 15px;
+    border-radius: 4px;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 5px var(--neon-cyan);
+}
+
+
+.profile-image {
+    width: 140px;
+    height: 140px;
+    border: 3px solid var(--neon-cyan);
+    border-radius: 50%;
+    margin: 0 auto 15px auto; 
+    background: 
+        linear-gradient(45deg, transparent 48%, var(--neon-cyan) 48%, var(--neon-cyan) 52%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, var(--neon-cyan) 48%, var(--neon-cyan) 52%, transparent 52%);
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.2);
+}
+
+h1 {
+    color: var(--silver-white);
+    font-size: 2rem;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+
+.main-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 40px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+article {
+    background: var(--card-blue);
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 4px solid var(--slate-tech);
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+}
+
+article:hover {
+    border-left-color: var(--neon-cyan);
+    transform: translateX(10px);
+    background: #172a45;
+}
+
+h2, h3 {
+    color: var(--silver-white);
+    margin-top: 0;
+}
+
+
+.contact-btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: transparent;
+    color: var(--neon-cyan);
+    border: 2px solid var(--neon-cyan);
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin-top: 10px;
+    text-decoration: none; /* Removes the underline */
+}
+
+.contact-btn:hover {
+    background-color: rgba(100, 255, 218, 0.1); /* Subtle glow fill */
+    box-shadow: 0 0 15px var(--neon-cyan); /* Neon glow effect */
+    transform: translateY(-2px);
+}
+
+a {
+    color: var(--neon-cyan);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: var(--slate-tech);
+}
+
+
+@media (max-width: 768px) {
+    .main-layout {
+        grid-template-columns: 1fr;
+    }
+}
